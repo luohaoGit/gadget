@@ -2,32 +2,34 @@
 <!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 <generatorConfiguration>
-    <classPathEntry location="E:\env\repo\mysql\mysql-connector-java\5.1.39\mysql-connector-java-5.1.39.jar"/>
-    <context id="my" targetRuntime="MyBatis3">
+    <classPathEntry location="/Users/luohao/.m2/repository/mysql/mysql-connector-java/5.1.40/mysql-connector-java-5.1.40.jar"/>
+    <context id="generator" targetRuntime="MyBatis3">
         <commentGenerator>
             <property name="suppressDate" value="false"/>
             <property name="suppressAllComments" value="true"/>
         </commentGenerator>
 
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://xxxx/pst"
+                        connectionURL="jdbc:mysql://127.0.0.1/gadget"
                         userId="root"
-                        password="xxxx"/>
+                        password="toor"/>
 
-        <javaModelGenerator targetPackage="com.dennis.boot.entity" targetProject="E:\gitws\s-boot\src\main\java">
+        <javaModelGenerator targetPackage="com.github.wx.gadget.dbo"
+                            targetProject="/Users/luohao/IdeaProjects/gadget/model/src/main/java">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
 
-        <sqlMapGenerator targetPackage="mapper" targetProject="E:\gitws\s-boot\src\main\resources">
+        <sqlMapGenerator targetPackage="mapper" targetProject="/Users/luohao/IdeaProjects/gadget/service/src/main/resources">
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
 
-        <javaClientGenerator targetPackage="com.dennis.boot.mapper" targetProject="E:\gitws\s-boot\src\main\java" type="XMLMAPPER">
+        <javaClientGenerator targetPackage="com.github.wx.gadget.mybatis.mapper"
+                             targetProject="/Users/luohao/IdeaProjects/gadget/service/src/main/java" type="XMLMAPPER">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
 
-        <table tableName="order_detail" domainObjectName="OrderDetail"
+        <table tableName="gg_tear" domainObjectName="Tear"
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false">
