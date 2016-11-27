@@ -27,7 +27,7 @@
         <jdk.version>1.8</jdk.version>
         <charset.encoding>UTF-8</charset.encoding>
 
-        <wx.version>2.3.0</wx.version>
+        <weixin-java-mp.version>2.3.0</weixin-java-mp.version>
         <guava.version>18.0</guava.version>
         <druid.version>1.0.9</druid.version>
         <boot.mybatis.version>1.1.1</boot.mybatis.version>
@@ -38,7 +38,7 @@
         <dependency>
             <groupId>com.github.binarywang</groupId>
             <artifactId>weixin-java-mp</artifactId>
-            <version>${wx.version}</version>
+            <version>${weixin-java-mp.version}</version>
         </dependency>
 
         <dependency>
@@ -56,6 +56,11 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
 
         <dependency>
