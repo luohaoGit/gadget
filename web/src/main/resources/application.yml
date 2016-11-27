@@ -23,3 +23,14 @@ spring:
 mybatis:
   mapperLocations: classpath:mapper/*.xml
   typeAliasesPackage: com.github.wx.gadget.dbo
+
+loggin:
+  level:
+    org.springframework.web: DEBUG
+    com.github.wx.gadget: DEBUG
+
+wechat:
+  mp:
+    appId: xxx
+    secret: xxx
+    token: xxx
