@@ -29,68 +29,85 @@
         <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.build.locales>zh_CN</project.build.locales>
-        <jdk.version>1.8</jdk.version>
-        <charset.encoding>UTF-8</charset.encoding>
 
+        <gadget.version>0.0.1-SNAPSHOT</gadget.version>
         <weixin-java-mp.version>2.3.0</weixin-java-mp.version>
         <guava.version>18.0</guava.version>
         <druid.version>1.0.9</druid.version>
         <boot.mybatis.version>1.1.1</boot.mybatis.version>
     </properties>
 
-    <dependencies>
+    <dependencyManagement>
+        <dependencies>
 
-        <dependency>
-            <groupId>com.github.binarywang</groupId>
-            <artifactId>weixin-java-mp</artifactId>
-            <version>${weixin-java-mp.version}</version>
-        </dependency>
+            <dependency>
+                <groupId>com.github.wx</groupId>
+                <artifactId>web</artifactId>
+                <version>${gadget.version}</version>
+            </dependency>
 
-        <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-            <version>${guava.version}</version>
-        </dependency>
+            <dependency>
+                <groupId>com.github.wx</groupId>
+                <artifactId>service</artifactId>
+                <version>${gadget.version}</version>
+            </dependency>
 
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>druid</artifactId>
-            <version>${druid.version}</version>
-        </dependency>
+            <dependency>
+                <groupId>com.github.wx</groupId>
+                <artifactId>common</artifactId>
+                <version>${gadget.version}</version>
+            </dependency>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
+            <dependency>
+                <groupId>com.github.wx</groupId>
+                <artifactId>model</artifactId>
+                <version>${gadget.version}</version>
+            </dependency>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-thymeleaf</artifactId>
-        </dependency>
+            <dependency>
+                <groupId>com.github.binarywang</groupId>
+                <artifactId>weixin-java-mp</artifactId>
+                <version>${weixin-java-mp.version}</version>
+            </dependency>
 
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-        </dependency>
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
 
-        <dependency>
-            <groupId>org.mybatis.spring.boot</groupId>
-            <artifactId>mybatis-spring-boot-starter</artifactId>
-            <version>${boot.mybatis.version}</version>
-        </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
 
-    </dependencies>
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${boot.mybatis.version}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
 
     <build>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <!-- 指定该Main Class为全局的唯一入口 -->
+                    <mainClass>com.github.wx.gadget.Application</mainClass>
+                    <layout>ZIP</layout>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal><!--可以把依赖的包都打包到生成的Jar包中-->
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
 
             <plugin>
