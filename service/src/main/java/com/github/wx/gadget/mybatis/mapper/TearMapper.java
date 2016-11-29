@@ -2,6 +2,8 @@ package com.github.wx.gadget.mybatis.mapper;
 
 import com.github.wx.gadget.dbo.Tear;
 
+import java.util.List;
+
 public interface TearMapper {
     int deleteByPrimaryKey(Integer id);
 
@@ -14,4 +16,6 @@ public interface TearMapper {
     int updateByPrimaryKeySelective(Tear record);
 
     int updateByPrimaryKey(Tear record);
+
+    List<Tear> all();
 }
