@@ -19,7 +19,7 @@ public class HelloController {
         return "Greetings from Spring Boot!";
     }
 
-    @RequestMapping("/test")
+    @RequestMapping(value = "/test")
     public List<Tear> test(){
         return tearService.allTears();
     }
