@@ -20,10 +20,8 @@ spring:
     poolPreparedStatements: true
     maxOpenPreparedStatements: 20
 
-loggin:
-  level:
-    org.springframework.web: DEBUG
-    com.github.wx.gadget: DEBUG
+logging:
+  file: gadget.log
 
 wechat:
   mp:
