@@ -1,7 +1,10 @@
 package com.github.wx.gadget.dbo;
 
+import lombok.Data;
+
 import java.util.Date;
 
+@Data
 public class Tear {
     private Integer id;
 
@@ -10,36 +13,4 @@ public class Tear {
     private Date createTime;
 
     private Integer version;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name == null ? null : name.trim();
-    }
-
-    public Date getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
-    }
-
-    public Integer getVersion() {
-        return version;
-    }
-
-    public void setVersion(Integer version) {
-        this.version = version;
-    }
 }
