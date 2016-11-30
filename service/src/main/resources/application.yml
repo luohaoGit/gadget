@@ -2,7 +2,7 @@ spring:
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
   datasource:
-    name: test
+    name: gadget
     url: jdbc:mysql://127.0.0.1:3306/gadget
     username: root
     password: toor
