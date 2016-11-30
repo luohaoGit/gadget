@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration scan="true" scanPeriod="60 seconds" debug="false">
-    <springProperty scope="context" name="PORT" source="server.port" defaultValue="port_id_undefined"/>
+    <springProperty scope="context" name="PORT" source="server.port" defaultValue="server.port_is_undefined"/>
     <include resource="org/springframework/boot/logging/logback/defaults.xml" />
     <property name="LOG_FILE" value="${LOG_FILE:-${LOG_PATH:-${LOG_TEMP:-${java.io.tmpdir:-/tmp}}/}${HOSTNAME}.${PORT}.gadget.log}"/>
     <include resource="org/springframework/boot/logging/logback/console-appender.xml" />
