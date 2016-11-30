@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration scan="true" scanPeriod="60 seconds" debug="false">
+    <springProperty scope="context" name="PORT" source="server.port" defaultValue="port_id_undefined"/>
     <include resource="org/springframework/boot/logging/logback/defaults.xml" />
-    <property name="LOG_FILE" value="${LOG_FILE:-${LOG_PATH:-${LOG_TEMP:-${java.io.tmpdir:-/tmp}}/}${HOSTNAME}.${catalina.port}.gadget.log}"/>
+    <property name="LOG_FILE" value="${LOG_FILE:-${LOG_PATH:-${LOG_TEMP:-${java.io.tmpdir:-/tmp}}/}${HOSTNAME}.${PORT}.gadget.log}"/>
     <include resource="org/springframework/boot/logging/logback/console-appender.xml" />
 
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
