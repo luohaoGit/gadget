@@ -1,9 +1,11 @@
 package com.github.wx.gadget.mybatis.mapper;
 
 import com.github.wx.gadget.dbo.Tear;
+import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 
+@Mapper
 public interface TearMapper {
     int deleteByPrimaryKey(Integer id);
 
