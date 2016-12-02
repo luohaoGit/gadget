@@ -1,12 +1,16 @@
 package com.github.wx.gadget.handler;
 
+import com.github.wx.gadget.assembler.Assembler;
 import com.github.wx.gadget.builder.TextBuilder;
+import com.github.wx.gadget.dbo.User;
+import com.github.wx.gadget.service.UserService;
 import me.chanjar.weixin.common.exception.WxErrorException;
 import me.chanjar.weixin.common.session.WxSessionManager;
 import me.chanjar.weixin.mp.api.WxMpService;
 import me.chanjar.weixin.mp.bean.message.WxMpXmlMessage;
 import me.chanjar.weixin.mp.bean.message.WxMpXmlOutMessage;
 import me.chanjar.weixin.mp.bean.result.WxMpUser;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.Map;
@@ -16,6 +20,9 @@ import java.util.Map;
  */
 @Component
 public class SubscribeHandler extends AbstractHandler {
+
+    @Autowired
+    private UserService userService;
 
     @Override
     public WxMpXmlOutMessage handle(WxMpXmlMessage wxMessage,
@@ -29,7 +36,8 @@ public class SubscribeHandler extends AbstractHandler {
             .userInfo(wxMessage.getFromUser(), null);
 
         if (userWxInfo != null) {
-            // TODO 可以添加关注用户到本地
+            User user = Assembler.assembler(userWxInfo);
+            userService.insertUser(user);
         }
 
         WxMpXmlOutMessage responseResult = null;
