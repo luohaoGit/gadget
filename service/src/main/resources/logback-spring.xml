@@ -18,7 +18,11 @@
         </rollingPolicy>
     </appender>
 
-    <logger name="com.github.wx.gadget.mybatis.mapper" level="DEBUG"/>
+    <!--<logger name="com.github.wx.gadget.mybatis.mapper" level="DEBUG"/>-->
+    <logger name="jdbc.sqlonly" level="ERROR"/>
+    <logger name="jdbc.sqltiming" level="DEBUG"/>
+    <logger name="jdbc.audit" level="ERROR"/>
+    <logger name="jdbc.resultset" level="ERROR"/>
 
     <root level="INFO">
         <appender-ref ref="FILE" />
