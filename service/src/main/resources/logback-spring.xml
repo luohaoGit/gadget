@@ -23,6 +23,7 @@
     <logger name="jdbc.sqltiming" level="DEBUG"/>
     <logger name="jdbc.audit" level="ERROR"/>
     <logger name="jdbc.resultset" level="ERROR"/>
+    <logger name="jdbc.connection" level="ERROR"/>
 
     <root level="INFO">
         <appender-ref ref="FILE" />
