@@ -3,6 +3,8 @@ package com.github.wx.gadget.mybatis.mapper;
 import com.github.wx.gadget.dbo.User;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+
 @Mapper
 public interface UserMapper {
     int deleteByPrimaryKey(Integer id);
@@ -18,4 +20,6 @@ public interface UserMapper {
     int updateByPrimaryKey(User record);
 
     void unsubscribe(String openId);
+
+    List<User> all();
 }

@@ -33,6 +33,11 @@
     where openid = #{openId}
   </update>
 
+  <select id="all" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from gg_user
+  </select>
 
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 

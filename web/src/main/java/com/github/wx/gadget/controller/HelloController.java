@@ -1,7 +1,7 @@
 package com.github.wx.gadget.controller;
 
-import com.github.wx.gadget.dbo.Tear;
-import com.github.wx.gadget.service.TearService;
+import com.github.wx.gadget.dbo.User;
+import com.github.wx.gadget.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,7 +12,7 @@ import java.util.List;
 public class HelloController {
 
     @Autowired
-    private TearService tearService;
+    private UserService userService;
 
     @RequestMapping("/")
     public String index() {
@@ -20,8 +20,8 @@ public class HelloController {
     }
 
     @RequestMapping(value = "/test")
-    public List<Tear> test(){
-        return tearService.allTears();
+    public List<User> test(){
+        return userService.list();
     }
 
 }

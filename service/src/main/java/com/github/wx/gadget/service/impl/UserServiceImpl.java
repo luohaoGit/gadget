@@ -6,6 +6,8 @@ import com.github.wx.gadget.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * Created by luohao on 2016/12/2.
  */
@@ -23,6 +25,11 @@ public class UserServiceImpl implements UserService {
     @Override
     public void unsubscribe(String openId) {
         userMapper.unsubscribe(openId);
+    }
+
+    @Override
+    public List<User> list() {
+        return userMapper.all();
     }
 
 }
