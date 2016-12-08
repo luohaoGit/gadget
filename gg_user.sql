@@ -1,23 +1,4 @@
-/*
-Navicat MySQL Data Transfer
 
-Source Server         : dennis
-Source Server Version : 50553
-Source Host           : 192.168.17.28:3306
-Source Database       : gadget
-
-Target Server Type    : MYSQL
-Target Server Version : 50553
-File Encoding         : 65001
-
-Date: 2016-12-02 13:58:38
-*/
-
-SET FOREIGN_KEY_CHECKS=0;
-
--- ----------------------------
--- Table structure for gg_user
--- ----------------------------
 DROP TABLE IF EXISTS `gg_user`;
 CREATE TABLE `gg_user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -39,5 +20,6 @@ CREATE TABLE `gg_user` (
   `unionid` varchar(100) DEFAULT NULL,
   `remark` varchar(500) DEFAULT NULL,
   `groupid` varchar(100) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `OPENID` (`openid`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;

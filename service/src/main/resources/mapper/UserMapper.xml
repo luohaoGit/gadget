@@ -64,6 +64,19 @@
       #{language,jdbcType=VARCHAR}, #{headimgurl,jdbcType=VARCHAR}, #{subscribeTime,jdbcType=VARCHAR}, 
       #{unionid,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, #{groupid,jdbcType=VARCHAR}
       )
+    ON DUPLICATE KEY UPDATE
+    subscribe = values(subscribe),
+    nickname = values(nickname),
+    sex = values(sex),
+    city = values(city),
+    country = values(country),
+    province = values(province),
+    language = values(language),
+    headimgurl = values(headimgurl),
+    subscribeTime = values(subscribeTime),
+    unionid = values(unionid),
+    remark = values(remark),
+    groupid = values(groupid)
   </insert>
   <insert id="insertSelective" parameterType="com.github.wx.gadget.dbo.User" >
     insert into gg_user
